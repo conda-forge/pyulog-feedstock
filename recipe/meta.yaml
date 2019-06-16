@@ -1,6 +1,6 @@
 {% set name = "pyulog" %}
-{% set version = "0.6.0" %}
-{% set sha256 = "5899de5950ded5890af934c1902f4525a1ec7c48dec4587ebbc345f1aa8db1e6" %}
+{% set version = "0.7.0" %}
+{% set sha256 = "6f45f088615893caec0bc692f1590006dec44fbff544f730b78a84757f4a15a5" %}
 
 package:
   name: {{ name|lower }}
