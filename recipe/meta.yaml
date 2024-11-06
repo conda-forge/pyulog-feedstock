@@ -1,6 +1,6 @@
 {% set name = "pyulog" %}
-{% set version = "0.7.0" %}
-{% set sha256 = "6f45f088615893caec0bc692f1590006dec44fbff544f730b78a84757f4a15a5" %}
+{% set version = "0.8.0" %}
+{% set sha256 = "2d78bf35b4bb36e3d23efe304e53e199f45aa4788f6668df389f0c41d4c71bf0" %}
 
 package:
   name: {{ name|lower }}
@@ -19,7 +19,7 @@ build:
     - ulog_messages=pyulog.messages:main
     - ulog_params=pyulog.params:main
     - ulog2csv=pyulog.ulog2csv:main
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -52,7 +52,7 @@ about:
   home: https://github.com/PX4/pyulog
   license: BSD 3-Clause
   license_file: LICENSE.md
-  summary: 'Python library to parse ULog files for PX4 autopilots.'
+  summary: Python library to parse ULog files for PX4 autopilots.
 
 extra:
   recipe-maintainers:
