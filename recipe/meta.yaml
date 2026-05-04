@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - ulog_extract_gps_dump=pyulog.extract_gps_dump:main
@@ -19,15 +19,15 @@ build:
     - ulog_messages=pyulog.messages:main
     - ulog_params=pyulog.params:main
     - ulog2csv=pyulog.ulog2csv:main
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
-    - python
+  host:
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python
+    - python >={{ python_min }}
     - numpy
 
 test:
@@ -35,6 +35,7 @@ test:
     - ddt
     - nose
     - setuptools
+    - python {{ python_min }}
   source_files:
     - test/*
     - setup.py
